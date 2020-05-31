@@ -1,0 +1,70 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+
+$responsive: 'all and (max-width: 1024px)';
+
+.navbar {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin: 0 20px;
+	padding: 25px 0;
+}
+
+.welcome>h1 {
+	margin: 0;
+	font-family: $Quicksand;
+	font-size: 22px;
+}
+
+.entreprise-infos {
+	color: $Yellow;
+}
+
+.userInfoAndOption {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	color: black;
+}
+
+.userInfoItem {
+	margin: 0 10px 0 0;
+	font-family: $Quicksand;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.option {
+	text-decoration: none;
+	color: black;
+}
+
+.option:hover {
+	color: $Yellow;
+}
+
+@media #{$responsive} {
+	.navbar {
+		background-color: #181B3B;
+		margin: 0;
+		color: white;
+		padding: 15px 10px;
+	}
+
+	.welcome>h1 {
+		margin: 0;
+		font-family: $Quicksand;
+		font-size: 18px;
+	}
+
+	.userInfoItem, .option {
+		color: white;
+		font-weight: 400;
+		font-size: 16px;
+	}
+
+}

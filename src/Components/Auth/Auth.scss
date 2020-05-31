@@ -1,0 +1,169 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+$Cloud: #f2f2f2;
+$Concrete: #95a5a6;
+
+$responsive: 'all and (max-width: 1024px)';
+
+/* Général */
+.auth-container {
+	height: 100vh;
+	display: flex;
+}
+
+.auth-side-form {
+	background-color: $Cloud;
+	flex: 1 1 0;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.auth-side-other {
+	flex: 2 1 0;
+	background-color: $Blue;
+	background-image: url("./Side.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	animation: flying linear 5s infinite;
+}
+
+@keyframes flying {
+	25%, 75%{
+		background-position: 50% 40%;
+	}
+
+	0%, 50%, 100%{
+		background-position: 50% 60%;
+	}
+}
+
+.auth-form {
+	padding: 0 50px 20px 50px;
+}
+
+.auth-title {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 35px;
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+
+/* Design des champs */
+.auth-fields {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.auth-fields>input {
+	margin: 0 0 20px 0;
+	border-radius: 5px;
+	width: 25vw;
+	font-weight: normal;
+	cursor: text;
+	box-shadow: none;
+	border: 1px solid $Concrete;
+
+	font-size: 18px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+/* Design des boutons de soumission, des liens vers les autres pages d'auth, etc... */
+.auth-bottom, .forgot-bottom {
+	margin: 10px 0 0 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: center;
+}
+
+.link-auth-bottom>a {
+	color: #34495e;
+}
+
+.link-auth-bottom>a:hover {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.link-auth-bottom>p {
+	margin: 0;
+}
+
+.link-auth-bottom>p>a, .link-forgot-bottom>p>a {
+	font-size: 12px;
+	color: #34495e;
+}
+
+.link-auth-bottom>p>a:hover, .link-forgot-bottom>p>a:hover {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.auth-bottom>input, .forgot-bottom>input {
+	padding: 10px 60px;
+	border-radius: 999px;
+	background-color: $Yellow;
+	color: black;
+	font-size: 15px;
+	font-family: 'Quicksand', sans-serif;
+	box-shadow: none;
+}
+
+/* Css de l'erreur */
+.auth-form>.auth-error {
+	margin: 0 0 15px 0;
+	color: red;
+	animation: shake 0.8s cubic-bezier(.36, .07, .19, .97) both;
+	font-size: 18px;
+}
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+
+@media #{$responsive} {
+
+	.auth-side-other{
+		display: none;
+	}
+
+	.auth-form {
+		padding: 0 0 20px 0;
+	}
+
+	.auth-fields>input {
+		width: 60vw;
+	}
+
+	.auth-form>.auth-error {
+		text-align: center;
+	}
+}

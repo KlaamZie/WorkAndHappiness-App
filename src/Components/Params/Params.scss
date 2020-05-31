@@ -1,0 +1,240 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+$Cloud: #FFF;
+$Back: #ecf0f1;
+
+$responsive: 'all and (max-width: 1024px)';
+
+.infos-container {
+	background-color: $Cloud;
+	margin: 0 20px;
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+}
+
+.infos-container>h1, .changeId-container>h1, .rgpd-container>h1 {
+	font-family: $Quicksand;
+	font-size: 18px;
+	text-align: center;
+	color: #4F5C6E;
+	margin: 0;
+	padding: 10px;
+}
+
+.infos-content-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+	font-family: $Quicksand;
+	padding: 10px;
+}
+
+.infos-content-container>p, .infos-content-container>.change-entreprise>p {
+	margin: 0;
+}
+
+.infos-content-container>.change-entreprise {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.infos-content-container>.change-entreprise>i {
+	margin: 0 0 0 5px;
+	cursor: pointer;
+}
+
+.infos-content-container>.change-entreprise>i:hover {
+	color: #7f8c8d;
+}
+
+.changeId {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 10px 20px;
+	grid-gap: 5px;
+}
+
+.changeId-container {
+	background-color: $Cloud;
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+}
+
+.changeId-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+
+.changeId-form>input {
+	font-family: $Quicksand;
+	margin: 10px 0 10px 0;
+	cursor: text;
+}
+
+.changeId-form>input:first-of-type {
+	margin: 10px 0 10px 0;
+}
+
+.changeId-form>input {
+	box-shadow: none;
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 60%;
+}
+
+.changeId-form>input[type="submit"] {
+	background-color: $Blue;
+	border: none;
+	width: 40%;
+	cursor: pointer;
+}
+
+.rgpd-container {
+	background-color: $Cloud;
+	margin: 0 20px 10px 20px;
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+}
+
+.rgpd-form {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.rgpd-items {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: $Open-sans;
+}
+
+.rgpd-items>.PrivateSwitchBase-root-7 {
+	padding: 0;
+}
+
+.rgpd-form>input {
+	align-self: center;
+	width: 20%;
+	box-shadow: none;
+	background-color: $Blue;
+	border-radius: 5px;
+	margin: 20px 0 0 0;
+	font-family: $Quicksand;
+}
+
+// Mise en forme de la Modale pour changer d'entreprise
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	text-align: center;
+	background-color: white;
+	min-width: 50%;
+	min-height: 50%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 20px;
+
+	-webkit-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.50);
+	-moz-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.50);
+	box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.50);
+}
+
+.modal-content>h1, .modal-content>p {
+	margin: 10px;
+}
+
+.modal-content>p>.modal-span {
+	color: red;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.modal-content>.error {
+	margin: 20px 0 0 0;
+}
+
+.modal-content>form{
+	display: flex;
+	flex-direction: column;
+	margin: 10px auto;
+	padding: 0;
+	width: 50%;
+}
+
+.modal-content>form>input {
+	box-shadow: 0px 5px 10px 0px rgba(38, 38, 38, 0);
+	text-align: center;
+	border-radius: 5px;
+}
+
+.modal-content>form>input[type="text"] {
+	border: 1px solid black;
+	cursor: text;
+	background-color: #ecf0f1;
+}
+
+.modal-content>form>input[type="submit"] {
+	margin-top: 10px;
+	background-color: $Blue;
+}
+
+@media #{$responsive} {
+	.infos-container, .changeId, {
+		margin: 10px 5px 0 5px;
+	}
+
+	.rgpd-container {
+		margin: 10px 5px 10px 5px;
+	}
+
+	.infos-content-container>p, .infos-content-container>.change-entreprise>p {
+		margin: 5px;
+	}
+
+	.changeId {
+		grid-template-columns: 1fr;
+		grid-gap: 10px;
+	}
+
+	.rgpd-items:last-of-type {
+		margin: 10px 0 0 0;
+	}
+	.rgpd-items>label {
+		font-size: 12px;
+	}
+
+	// Responsive Modal
+	.modal-content {
+		top: 25%;
+		max-width: 80%
+	}
+}

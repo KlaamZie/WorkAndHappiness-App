@@ -1,0 +1,42 @@
+/*.contact-container {
+  */
+  /*  background-color: #fff;*/
+  /*  border-radius: 5px;*/
+  /*  overflow: auto;*/
+  /*  margin-bottom: 20px;*/
+  /*}*/
+  /*.contact-title {*/
+  /*  display: flex;*/
+  /*  align-items: center;*/
+  /*  justify-content: space-between;*/
+  /*  padding: 10px 15px;*/
+  /*  background-color: #ffb626;*/
+  /*  margin: 0;*/
+  /*}*/
+  /*.add-contact {*/
+  /*  font-size: 25px;*/
+  /*  color: black;*/
+  /*}*/
+  /*.add-contact:hover {*/
+  /*  text-decoration: none;*/
+  /*  color: #07a0c3;*/
+  /*}*/
+  /*.contact-list {*/
+  /*  margin: 0;*/
+  /*  max-height: 400px;*/
+  /*  overflow: auto;*/
+  /*  background-color: #e8edf2;*/
+  /*}*/
+  /*.item-contact {*/
+  /*  display: flex;*/
+  /*  flex-direction: column;*/
+  /*  margin: 20px 10px;*/
+  /*  background-color: #fff;*/
+  /*  border-radius: 5px;*/
+  /*}*/
+  /*.item-contact h3 {*/
+  /*  margin-left: 5px;*/
+  /*}*/
+  /*.item-contact p {*/
+  /*  margin-left: 5px;*/
+  /*}*/

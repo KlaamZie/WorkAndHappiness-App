@@ -1,0 +1,38 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+$Cloud: #FFF;
+$Back: #ecf0f1;
+
+$responsive: 'all and (max-width: 1024px)';
+
+footer {
+  padding: 15px 0;
+}
+
+footer>ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+footer>ul>li {
+  font-family: $Quicksand;
+  margin: 0 20px;
+  font-size: 16px;
+}
+
+footer>ul>li>a {
+  text-decoration: none;
+  color: #4F5C6E;
+}
+
+footer>ul>li>a:hover {
+  font-weight: bold;
+}

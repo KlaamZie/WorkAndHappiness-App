@@ -1,0 +1,101 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+$Cloud: #ecf0f1;
+
+$responsive: 'all and (max-width: 1024px)';
+
+.redirect-login {
+    background-color: $Blue;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.redirect-login>p {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.signup-title {
+    margin-top: 30px;
+}
+
+/* Design des champs rgpd lors de l'inscription */
+.auth-fields>.rgpd>.rgpd-items {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0px;
+}
+
+.auth-fields>.rgpd>.rgpd-items:last-child{
+    margin: 10px 0 20px 0;
+}
+
+.auth-fields>.rgpd>.rgpd-items>label {
+	margin-right: 25px;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.auth-fields>.rgpd>.rgpd-items>.PrivateSwitchBase-root-7 {
+	padding: 0;
+}
+
+#entrepriseName {
+    margin: 0 0 20px 0;
+}
+
+.confirmation-container {
+    align-items: flex-start;
+}
+
+.confirmation-title {
+    text-align: justify;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.confirmation-form {
+    padding: 0 50px;
+}
+
+.confirmation-form>.auth-fields {
+    margin-top: 20px;
+}
+
+.confirmation-form>.auth-bottom {
+    margin-bottom: 20px;
+}
+
+input[type=button] {
+    background-color: $Blue;
+}
+
+.confirmation-sendemail {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* .confirmation-container>h1{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+    margin: 10px 0;
+} */
+
+@media #{$responsive} {
+    .redirect-login {
+        width: 70vw;
+        margin: 10px auto 0 auto;
+    }
+
+    .rgpd {
+        margin: 0 20px;
+    }
+}

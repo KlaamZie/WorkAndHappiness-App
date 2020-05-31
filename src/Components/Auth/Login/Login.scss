@@ -1,0 +1,89 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+$Cloud: #ecf0f1;
+
+$responsive: 'all and (max-width: 1024px)';
+
+.auth-fields>input:last-child {
+    margin: 0;
+}
+
+.auth-form>section {
+      margin: 10px 0 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Quicksand', sans-serif;
+}
+
+.auth-form>section>div>p, .auth-form>section>p {
+  margin: 0;
+}
+
+.auth-form>section>div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.auth-form>section>div>input[type="checkbox"] {
+  box-shadow: none;
+}
+
+.auth-form>section>div>p, .redirect-forgot>a {
+    color: #34495e;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.redirect-forgot>a:hover {
+	font-weight: bold;
+}
+
+.separator {
+    color: #34495e;
+    font-family: 'Quicksand', sans-serif;
+    margin: 10px 0;
+}
+
+.separator:before, .separator:after {
+    content:'';
+    display:inline-block;
+    vertical-align: middle;
+    width: 8rem;
+    height: 1px;
+    background: #95a5a6;
+}
+
+.separator:before { margin-right: .3rem }
+.separator:after { margin-left: .3rem }
+
+.redirect-signup {
+    background-color: $Yellow;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    margin: 20px 0 0 0;
+}
+
+.entreprise-signup {
+    background-color: #07a0c3;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    margin: 20px 0 0 0;
+}
+
+.redirect-signup>span {
+    font-family: 'Quicksand', sans-serif;
+}
+
+@media #{$responsive} {
+    .redirect-forgot {
+        text-align: center;
+        margin: 10px 0 20px 0;
+    }
+}

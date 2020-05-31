@@ -1,0 +1,76 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+
+$responsive: 'all and (max-width: 1024px)';
+
+.mailValidation-form {
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+
+	background-color: #FFF;
+
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mailValidation-fields {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.mailValidation-fields>label {
+	margin: 15px;
+	font-size: 18px;
+}
+
+.mailValidation-fields>input {
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 30vw;
+	cursor: text;
+}
+
+
+.mailValidation-bottom {
+	margin: 20px auto;
+}
+
+.mailValidation-bottom>input {
+	border-radius: 5px;
+	background-color: $Blue;
+	color: white;
+}
+
+@media #{$responsive} {
+	.mailValidation-form {
+		width: 85vw;
+	}
+
+	.mailValidation-fields>label {
+		text-align: center;
+		margin: 15px auto;
+		font-size: 14px;
+	}
+
+	.mailValidation-fields>input {
+		border-radius: 5px;
+		width: 60vw;
+	}
+
+	.mailValidation-bottom>input {
+		margin: auto;
+		font-size: 15px;
+		width: 50vw;
+	}
+}

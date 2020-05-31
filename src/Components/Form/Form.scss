@@ -1,0 +1,149 @@
+$Quicksand: 'Quicksand', sans-serif;
+$Open-sans: 'Open-sans', sans-serif;
+
+$Yellow: #FFB626;
+$Blue: #07A0C3;
+$Cloud: #ecf0f1;
+$Concrete: #95a5a6;
+
+$responsive: 'all and (max-width: 1024px)';
+
+.form-container {
+	background-color: #fff;
+	margin: 0 20px;
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.06);
+}
+
+form {
+	padding: 15px;
+	overflow: auto;
+	font-family: $Open-sans;
+}
+
+.step {
+	margin: 5px 0;
+	font-size: 30px;
+}
+
+/* CSS des items */
+
+.group-items {
+	margin: 20px 0px;
+	padding-left: 25px;
+	border-left: solid 1.5px $Blue;
+}
+
+/* CSS des labels */
+
+.group-label {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.mark {
+	margin: 5px;
+}
+
+.mark>.MuiTypography-body1 {
+	font-size: 14px;
+	color: #4F5C6E;
+}
+
+/* CSS des boutons de navs du formulaire */
+
+.form-button-container {
+	text-align: right;
+}
+
+.form-button-container>button,
+input {
+	padding: 10px 25px;
+	margin: 0 5px;
+	border-style: none;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: $Quicksand;
+
+	cursor: pointer;
+}
+
+.form-button-container>button:disabled {
+	background-color: grey;
+	color: white;
+}
+
+.form-button-container>.next-button {
+	background-color: $Blue;
+}
+
+.form-button-container>.previous-button {
+	background-color: $Yellow;
+}
+
+.error {
+	font-size: 15px;
+	font-weight: bold;
+	color: red;
+	animation: shake 0.8s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+
+.already-answer {
+	padding: 15px;
+}
+
+.already-answer>h1,
+.already-answer>h2 {
+	text-align: center;
+	font-family: $Open-sans;
+}
+
+@media #{$responsive} {
+	.form-container {
+		margin: 10px 5px 0 5px;
+	}
+
+	.step {
+		font-size: 25px;
+	}
+
+	.group-label {
+		font-size: 13px;
+	}
+
+	.mark>.MuiTypography-body1 {
+		font-size: 12px;
+	}
+
+	.form-button-container>button,
+	input {
+		padding: 10px 20px;
+		font-size: 12px;
+	}
+}
