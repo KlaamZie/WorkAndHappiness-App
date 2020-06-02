@@ -1,3 +1,12 @@
+/*
+    Ce composant gère toute la partie dédiée à la création d'un nouvelle entreprise.
+    Pour s'inscrire l'utilisateur doit remplir un seul champs correspondant au nom de son entreprise.
+    Une fois validé on appelle l'API pour créer l'entreprise. Un fois que l'API à terminée elle nous
+    renvoie l'identifiant de la nouvelle entreprise on stocke celui-ci dans le state et on change la valeur
+    du state "confirmation" (on la passe à true) pour retourner un nouveau composant appelé Confirmation auquel
+    on envoie l'identifiant et le nom de l'entreprise en props ( ligne : if(confirmation) )
+*/
+
 import React, { useState } from "react";
 import {Redirect} from "react-router-dom";
 import {useCookies} from 'react-cookie';

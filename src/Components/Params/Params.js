@@ -1,3 +1,9 @@
+/*
+    Ce composant correspond à la pages des paramètres du compte.
+    Il appel d'autres composant situé dans le même dossier afin de les afficher.
+    Chaque sous composant est chargé avec les props nécessaire à leurs fonctionnement.
+*/
+
 import React, {useContext} from 'react';
 import Context from '../../Context/Context';
 

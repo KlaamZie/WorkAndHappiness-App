@@ -1,3 +1,16 @@
+/*
+    Suivre ces étapes pour comprendre les explications :
+        1 - ForgotPassword
+        2 - CheckCode
+        3 - ResetPassword
+
+    Ce composant permet à l'utilisateur de réinitialiser son mot de passe.
+    Cette étape est simplement composée de 2 champs input de type password.
+    Ces champs permettent d'entrer un nouveau mot de passe et de le valider en le tapant une deuxième fois.
+    On appelle ensuite l'API lors de la validation pour enregistrer et crypté le nouveau mot de passe puis on redirige
+    l'utilisateur vers la page de connexion.
+*/
+
 import React, { useState } from "react";
 import API from "../../../utils/Auth";
 import '../Auth.scss';

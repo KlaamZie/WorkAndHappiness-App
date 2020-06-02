@@ -1,3 +1,11 @@
+/*
+    Ce composant correspond à la page permettant de valider son adresse mail.
+
+    On demande son adresse mail à l'utilisateur grâce à un champ input de type email
+    puis on l'envoie à l'API qui nous retourne soit une validation soit une erreur (mauvaise adresse mail), si la
+    réponse est valide on redirige vers l'accueil sinon on reste sur la page.
+*/
+
 import React, {useContext, useState} from 'react';
 import Context from '../../Context/Context';
 import API from "../../utils/Auth";

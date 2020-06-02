@@ -1,3 +1,9 @@
+/*
+    Ce composant gère les préférence en terme de mails de l'utilisateur
+    Il retourne un formulaire avec 2 "Checkboxes", une fois le formulaire valider il appelle la fonction "handleSubmit"
+    qui appelle l'API avec les valeurs des 2 champs pour les modifié en base de données.
+*/
+
 import React, {useState, useEffect} from 'react';
 
 import Checkbox from '@material-ui/core/Checkbox';

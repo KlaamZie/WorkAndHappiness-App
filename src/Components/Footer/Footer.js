@@ -1,3 +1,9 @@
+/*
+    Comme son nom l'indique ce composant gère le pied de page de l'application,
+    il permet de rediriger vers les différentes pages du RGPD mais aussi de réouvrir le widget permettant de modifier ses
+    préférences en matière de cookies.
+*/
+
 import React from "react";
 
 import './Footer.scss';

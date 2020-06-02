@@ -1,3 +1,10 @@
+/*
+	Ce composant reçoit le formulaire et renvoie le groupe correspondant à l'étape où se situe l'utilisateur.
+	On boucle ensuite sur des tableaux afin de récupérer et d'afficher les labels et les choix.
+
+	Enfin, on appel un composant "GetButton" permettant d'intégrer les boutons de navigations dans le formulaire.
+*/
+
 import React from 'react';
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';

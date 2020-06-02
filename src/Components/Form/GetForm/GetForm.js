@@ -1,3 +1,14 @@
+/*
+    Ce composant est le premier sous-composant du questionnaire, il contient toute la partie logique (stockage des données,
+    envoie des données, changement des valeurs, changement d'étape)
+
+    Il permet aussi de récupérer les questions du formulaire et de les formatées grâce à la fonction getForm située
+    dans le fichier functions.js
+
+    Une fois les données récupérée et formatée par la fonction getForm, il les envoie au composant GetGroup qui s'occupera
+    de mettre en forme et de retourné le questionnaire pour chaque étape.
+*/
+
 import React, {useState, useContext} from 'react';
 import GetGroup from './GetGroup';
 import {getForm} from './functions';
@@ -16,6 +27,14 @@ export default function GetForm(props) {
     const [values, setValues] = useState([]);
     const [errorNotFull, setErrorNotFull] = useState("");
 
+    /*
+        Cette fonction permet de formatée les données du formulaire avant de les envoyées à l'API.
+
+        On fait un .map sur chaque index du state value (là où sont stockée les données) pour boucler sur l'index et
+        additionner les données de chaque étapes pour ensuite faire la moyenne de chaque étape.
+
+        Ensuite la fonction appelle l'API et lui envoie les données pour les stockées sur la base de données.
+    */
     const send = async () => {
         let globalGroup1 = 0;
         let globalGroup2 = 0;
@@ -73,6 +92,9 @@ export default function GetForm(props) {
             })
     }
 
+    /*
+        Cette fonction permet d'ajouter et de stocker les données des réponses dans le state values.
+    */
     const handleChange = event => {
         const index = Number(event.target.name);
         let newValues = values.slice();
@@ -80,6 +102,7 @@ export default function GetForm(props) {
         setValues(newValues)
     }
 
+    // Cette fonction permet de passer à l'étape suivante lorsque l'utilisateur à fini de répondre aux question de l'étape actuelle
     const nextStep = () => {
         document.querySelector('.content-container').scrollIntoView({
             behavior: 'smooth'
@@ -94,6 +117,7 @@ export default function GetForm(props) {
         }
     }
 
+    // Cette fonction permet de reculer d'une étape si l'utilisateur le souhaite (pour vérifier ses réponses par exemple)
     const previousStep = () => {
         document.querySelector('.content-container').scrollIntoView({
             behavior: 'smooth'
@@ -104,6 +128,10 @@ export default function GetForm(props) {
         }
     }
 
+    /*
+        Cette fonction permet de vérifié que l'utilisateur à bien répondu à toutes les questions de la dernière étape
+        et si tout est validé de lancer la fonction send qui traite et envoie les données.
+    */
     const handleSubmit = event => {
         if (steps + 1 === form.length) {
             if (values[steps].length !== form[steps][0].length) {
@@ -115,14 +143,15 @@ export default function GetForm(props) {
             } else {
                 event.preventDefault();
                 send();
-                //  window.location = '/home';
             }
         } else {
             event.preventDefault();
         }
     }
 
+    // Cette fonciont permet de récupérer les questions du formulaire et de les formatées
     getForm(completeForm, form)
+
     while (!form.length) {
         return (
             <div className='loading-container'>

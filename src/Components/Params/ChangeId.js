@@ -1,3 +1,17 @@
+/*
+    Ce composant gère les changements d'adresse mail et de mot de passe.
+    Il retourne 2 formulaires (1 pour l'adresse mail, l'autre pour le mot de passe).
+
+    Une fois validé chaque formulaire appelle une fonction différente :
+        - handleEmailSubmit : pour le changement d'adresse mail
+        - handlePasswordSubmit : pour le changement de mot de passe
+
+    Les 2 fonctions ont à peut prêt le même fonctionnement, elles regardent dans un premier temps si les données sont
+    valides, si elles sont valides elles appellent l'API pour effectuer le changement sur la base de donnée.
+    Si l'API ne retourne pas d'erreur les fonctions informent l'utilisateur que tout c'est bien passer puis le déconnecte
+    pour qu'il puisse se reconnecter avec sa nouvelle adresse mail ou son nouveau mot de passe.
+*/
+
 import React, {useState} from 'react'
 import API from "../../utils/Params";
 import Logout from "../../utils/Auth";

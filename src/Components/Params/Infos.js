@@ -1,3 +1,8 @@
+/*
+    Ce premier sous-composant permet à l'utilisateur de voir ses infos (Nom, Prénom, Adresse mail, Entreprise).
+    Il lui permet aussi, si il le souhaite, de changer d'entreprise.
+*/
+
 import React, {useState, useEffect} from 'react';
 import API from "../../utils/Params";
 import axios from "axios";

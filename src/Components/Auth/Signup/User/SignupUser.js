@@ -1,3 +1,18 @@
+/*
+    Ce composant gère toute la partie dédiée à l'inscription d'un utilisateur.
+    Pour s'inscrire l'utilisateur doit remplir plusieurs champs :
+        - Prénom
+        - Nom
+        - Identifiant d'entreprise
+        - email
+        - mot de passe
+        - confirmation du mot de passe
+    Il doit ensuite cocher des cases pour définir ses préférences en matières de mailing puis pour fini cocher une case
+    pour confirmer qu'il à lu et qu'il accepte les CGU et la Politique de Confidentialité.
+    Une fois validé on appelle l'API pour créer le compte et le lié à l'entreprise. Un fois que l'API à terminée elle nous
+    renvoie 2 token qu'on stocke dans les cookies puis on redirige l'utilisateur vers la page d'accueil.
+*/
+
 import React, {useState} from "react";
 import { Redirect } from "react-router-dom"
 import {useCookies} from 'react-cookie';
@@ -49,11 +64,11 @@ export default function Signup(props) {
                 return <Redirect to="/home" />
             })
             .catch(error => {
-                // On réinitialise le state error pour rejouer l'animation
                 return setError(error.response.data.text);
             })
     };
 
+    // Fonction permettant de rediriger vers la page de connexion si l'utilisateur à déjà un compte.
     const redirectLogin = () => {
         window.location = "/";
     }

@@ -1,3 +1,10 @@
+/*
+	Ce composant est le parent de tous les composants qui permettent de gérer le questionnaire.
+	Il s'occupe de vérifier si l'utilisateur à déjà répondu durant la semaine en récupérant ses données
+	dans le context.
+	Si il n'a pas répondu il retourne le reste des composants, sinon il affiche un message et bloque l'accès au questionnaire.
+*/
+
 import React, { useContext } from 'react';
 
 import GetForm from './GetForm/GetForm';

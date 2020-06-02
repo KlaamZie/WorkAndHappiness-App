@@ -1,3 +1,10 @@
+/*
+    Ce composant gère la Sidenav, c'est grâce à la sidenav que l'utilisateur navigue entre les différentes pages.
+
+    Il récupère les données de l'utilisateur dans le context afin de vérifier si l'utlisateur est Admin ou Modo pour lui
+    afficher le lien vers l'Admin.
+*/
+
 import React, {useState, useContext} from 'react';
 import Context from '../../Context/Context';
 import API from "../../utils/Auth";
@@ -19,8 +26,9 @@ export default function Sidenav(props) {
         window.location = "/";
     };
 
-    const [sidenav, setSidenav] = useState(false)
     /* Gestion du menu mobile */
+    const [sidenav, setSidenav] = useState(false)
+
     const displaySidenav = () => {
         document.getElementById('display-sidenav').style.display = "flex";
         document.getElementById('wrapper').style.filter = "blur(1.5px)";

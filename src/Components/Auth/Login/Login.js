@@ -1,3 +1,10 @@
+/*
+    Ce composant gère toute la partie dédiée à la connexion d'un utilisateur.
+    Pour se connecter l'utilisateur doit remplir 2 champs (adresse mail et mot de passe) une fois validé on appelle
+    l'API pour vérifier si l'adresse email correspond bien à un compte et si le mot de passe est le bon.
+    Nous le verrons plus loin mais l'utilisateur à la possibilité de préciser qu'il souhaite rester connecter.
+*/
+
 import React, {useState} from "react";
 import { Redirect } from "react-router-dom"
 import {useCookies} from 'react-cookie';
@@ -13,8 +20,10 @@ export default function Login(props) {
     const [error, setError] = useState("");
     const [stayLogged, setStayLogged] = useState(false);
 
+    // On définie les cookies que l'on vas utilisé ou créer
     const [cookies, setCookie] = useCookies(['_060698', '_031098']);
-    // Fonction qui envoie les données à l'API pour vérifier si le compte existe
+
+    // Cette fonction envoie les données à l'API pour vérifier si le compte existe
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!email || email.length === 0) {
@@ -28,6 +37,10 @@ export default function Login(props) {
             .then(response => {
                 let data = response.data;
                 // On charge les cookies des données nécessaires à l'application
+                /*
+                    Si l'utilisateur souhaite rester connecté on donne une date d'expiration pour les cookies qui est de
+                    6 mois après la connexion.
+                */
                 if (stayLogged) {
                     let date = new Date();
                     date.setMonth(date.getMonth() + 6);
@@ -40,7 +53,7 @@ export default function Login(props) {
             })
             .then(() => {
                 /*
-                    Si l'utilisateur à du se connecter pour aller à la page de validation d'adresse mail il y a un localStorage
+                    Si l'utilisateur à dû se connecter pour aller à la page de validation d'adresse mail il y a un localStorage
                     qui à été mis en place pour le rediriger vers la bonne page
 
                     localStorage = true -> connexion et redirection pour valider l'email
@@ -54,11 +67,14 @@ export default function Login(props) {
                 }
             })
             .catch(error => {
-                // On réinitialise le state error pour rejouer l'animation
                 return setError(error.response.data.text);
             })
 }
 
+/*
+    Les 2 fonctions ci-dessous (redirectSignup et redirectEntrepriseSignup) servent à gérer la redirection vers les pages
+    d'inscriptions.
+*/
 const redirectSignup = () => {
     window.location = "/signup";
 }

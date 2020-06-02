@@ -1,3 +1,11 @@
+/*
+    Ce composant gère la Navbar, il affiche le nom de la page sur laquelle l'utilisateur se trouve, le nom et le prénom
+    de l'utilisateur mais aussi un bouton permettant de se rendre de les paramètres du compte.
+
+    Pour se faire on récupère les infos de l'entreprise et de l'utilisateur dans le contexte.
+    Ensuite grâce à une condition (Switch) on défini le nom de la page.
+*/
+
 import React, {useContext} from 'react';
 import Context from '../../Context/Context';
 

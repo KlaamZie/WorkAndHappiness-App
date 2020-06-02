@@ -1,3 +1,20 @@
+/*
+	Ce composant correspond au "Dashboard", sur l'application c'est la page qui affiche les données de bien-être
+	de l'utilisateur.
+
+	On récupère tout d'abord les données de l'utilisateur et de son entreprise dans le context pour pouvoir les affichées.
+
+	La seule spécificitée se trouve à la ligne "if(entreprise.firstweek)", on regarde si c'est la première semaine de
+	l'entreprise sur l'application, si c'est le cas on affiche les données de la semaine au lieu des données du mois qui
+	n'existent pas encore enfin pour éviter un erreur d'affichage si le champ "general" qui correspond à la moyenne générale
+	est vide on met tout les champs à 0 car si celui-ci est vide tous les autres sont vide aussi.
+
+	Pour afficher la moyenne on utilise un sous-composant appellé simplement Moyenne se trouvant dans le dossier "UI".
+	On passe à ce composant un titre (le type de moyenne affichée) et la moyenne que l'on veux lui attribuer.
+
+	Pour afficher les graphiques cela est plus technique nous verrons donc ça directement dans le composant "Graph".
+*/
+
 import React, { useContext } from 'react';
 import Context from '../../Context/Context';
 
@@ -17,6 +34,7 @@ export default function Dashboard(props) {
 	}
 
 	let data = user.healthData;
+
 	if(entreprise.firstWeek){
 		let firstWeekData = user.monthlyData;
 		data = {
